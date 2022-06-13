@@ -1,23 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import Home from './pages/Home/Home'
+import PageNotFound from './components/pageNotFound/PageNotFound';
+import { Route,Routes } from 'react-router-dom'
+import ReduxLogin from './pages/reduxLogin/ReduxLogin'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='blur' style={{top: '-10%', right: '0%'}}></div>
+      <div className='blur blur_to' style={{top: '40%', left: '-8rem'}}></div>
+      {/* <Home/> */}
+      <div className=''>
+        <Routes>
+          <Route path='/' element={<Home/>}></Route>
+          <Route path='/reduxLogin' element={<ReduxLogin/>}></Route>
+          <Route path='*' element={<PageNotFound/>}></Route>
+        </Routes>
+      </div>
     </div>
   );
 }

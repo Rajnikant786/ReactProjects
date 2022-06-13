@@ -1,0 +1,11 @@
+.main_container{
+    /* background-color: red; */
+    width: 90%;
+    height: 95vh;
+    margin: auto;
+    display: flex;
+    display: -ms-flexbox;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}

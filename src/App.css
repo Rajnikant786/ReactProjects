@@ -1,38 +1,45 @@
-.App {
-  text-align: center;
+:root{
+  --black: #242d49;
+  --gray: rgba(36, 45, 73, 0.65);
+  --profileShadow: 0px 4px 17px 2px rgba(0, 0, 0, 0.25);
+  --hrColor: #cfcdcd;
+  --cardColor: rgba(255, 255, 255, 0.64);
+  --buttonBg: linear-gradient(98.63deg, #f9a225 0%, #f95f35 100%);
+  --primary: #EF5757;
+  --secondary: #4A4EB7;
+  --warning: #E1AE4A;
+  --white: #ffffff;
+  --box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+  --logo-font: 'Cookie', cursive;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App{
+  overflow: hidden;
+  color: var(--black);
+  background: #f3f3f3;
+  padding: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.blur{
+  position: absolute;
+  width: 22rem;
+  height: 14rem;
+  border-radius: 50%;
+  background: #a6ddf0;
+  filter: blur(72px);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.blur.blur_to{
+  background: var(--warning) !important;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn{
+  background: var(--secondary);
+  color: var(--white);
+  display: inline-block;
+  margin: .5rem auto;
+  width: 50%;
+  /* border: none;
+  padding: 6px 0px;
+  border-radius: 6px; */
 }

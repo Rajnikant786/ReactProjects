@@ -1,0 +1,63 @@
+.redux_form{
+    background-color: var(--hrColor);
+    padding: 20px 10px;
+    border-radius: 6px;
+    width: 300px;
+}
+
+form h1{
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--black);
+    padding: 10px 2px;
+    position: relative;
+}
+
+form h1::after,
+form h1::before{
+    content: '';
+    position: absolute;
+    background-color: var(--warning);
+}
+
+form h1::after{
+    width: 120px;
+    height: 4px;
+    border-radius: 2em;
+    left: 0;
+    bottom: 0;
+}
+
+form h1::before{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    bottom: -5px;
+    left: 0;
+}
+
+.input_field{
+    margin-bottom: .5rem;
+}
+
+.input_field input{
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 5px 15px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+}
+
+.errorText{
+    color: var(--primary);
+    letter-spacing: 1px;
+    font-size: 12px;
+    padding-left: 2px;
+}
+
+.submit_btn{
+    text-align: center;
+}
+

@@ -1,0 +1,113 @@
+:root{
+    --main-font-family: 'Roboto', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--main-font-family);
+}
+
+.home{
+    width: 80vw;
+    height: 95vh;
+    padding: 2rem;
+    /* background-color: red; */
+    margin: auto;
+}
+
+.welcome_text{
+    text-align: center;
+}
+
+.welcome_text h1{
+    font-size: 30px;
+    font-weight: 900;
+    padding: 8px;
+    margin-bottom: 2rem;
+    display: inline-block;
+    position: relative;
+}
+
+.welcome_text h1::after,
+.welcome_text h1::before{
+    content: '';
+    position: absolute;
+    background: var(--warning);
+    left: 10px;
+
+}
+
+.welcome_text h1::after{
+    width: 50%;
+    height: 4px;
+    border-radius: 2rem;
+    bottom: 0;
+}
+
+.welcome_text h1::before{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    bottom: -5px;
+}
+
+/* ================== task_container ============== */
+.task_container{
+    width: 100%;
+    /* height: 100%; */
+    display: flex;
+    display: -ms-flexbox;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: green; */
+    padding: 4px;
+    margin-top: 1rem;
+    overflow: auto;
+}
+
+.task_container .task_box{
+    width: 15%;
+    height: 120px;
+    background: var(--cardColor);
+    border-radius: 6px;
+    padding: 10px;
+    margin: 10px;
+    /* box-shadow: var(--profileShadow); */
+    text-decoration: none;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    display: -ms-flexbox;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all .5s ease-in-out;
+}
+
+.task_container .task_box:hover{
+    transform: translateY(-5px) scale(1.01);
+}
+
+.task_container .task_box span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background: var(--secondary);
+    border-bottom-right-radius: 2rem;
+    display: flex;
+    display: -ms-flexbox;
+    align-items: center;
+    justify-content: center;
+    color: var(--warning);
+    font-weight: 600;
+}
+
+.task_container .task_box h6{
+    color: var(--warning);
+    font-size: 14px;
+    letter-spacing: 1px;
+}

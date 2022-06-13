@@ -1,0 +1,15 @@
+footer{
+    width: 100%;
+    padding: 10px 0px;
+    padding-bottom: 0px;
+}
+
+footer p{
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: var(--gray);
+}
+
+footer .all_rights span{
+    color: var(--primary);
+}
