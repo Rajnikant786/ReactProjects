@@ -2,7 +2,11 @@ import React from 'react'
 
 const PageNotFound = () => {
   return (
-    <div>pageNotFound</div>
+    <div>
+      pageNotFound 
+      <br/>
+      <NavLink to="/">Go To Home</NavLink>
+    </div>
   )
 }
 
