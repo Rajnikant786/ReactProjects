@@ -3,6 +3,13 @@
     padding: 20px 10px;
     border-radius: 6px;
     width: 300px;
+    z-index: 99;
+}
+
+@media only screen and (max-width: 680px){
+    .redux_form{
+        width: 100%;
+    }
 }
 
 form h1{

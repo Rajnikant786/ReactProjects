@@ -1,9 +1,18 @@
-import React from 'react';
-import {Link,NavLink} from 'react-router-dom'
+import React  from 'react';
+import {NavLink} from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import './header.css'
 
 const Header = () => {
+
+  // const user = useSelector(selectUser);
+
+  const user = useSelector(state => state.userDetails);
+
+  console.log('UserData:- ',user.userDetails);
+
+
   return (
     <header>
         <div className='logo'>
@@ -13,6 +22,10 @@ const Header = () => {
           <li>
             <NavLink to="/">Home</NavLink>
           </li>
+          <li className="welcome_text">
+            welcome  <span>{user.userDetails?.username}</span>
+          </li>
+
         </ul>
     </header>
   )

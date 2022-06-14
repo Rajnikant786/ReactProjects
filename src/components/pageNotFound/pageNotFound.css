@@ -1,0 +1,34 @@
+.pageNotFound{
+    width: 100%;
+    height: 96vh;
+    display: flex;
+    display: -ms-flexbox;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.pageNotFound_container{
+    z-index: 99;
+    text-align: center;
+}
+
+.pageNotFound h1{
+    font-size: 150px;
+    font-weight: 900;
+    color: var(--primary);
+}
+
+.pageNotFound p{
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.pageNotFound .btn{
+    width: auto;
+    padding: 4px 20px;
+    font-size: 12px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}

@@ -1,14 +1,10 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React  from 'react';
 import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux'
-import { logout, selectUser } from '../../../features/userSlice';
+import { logout } from '../../../features/userSlice';
 
 import './welcome.css'
 
 const Welcome = () => {
-
-    const user = useSelector(selectUser);
 
     const dispatch = useDispatch();
 
@@ -16,6 +12,7 @@ const Welcome = () => {
         e.preventDefault();
         dispatch(logout())
     }
+
     return (
         <div className='welcomeContainer'>
             <h1>Welcome <span className='user_name'>{'user.username'}</span></h1>

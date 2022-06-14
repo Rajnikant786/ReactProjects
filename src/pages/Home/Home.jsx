@@ -1,6 +1,6 @@
 import React from 'react'
 import './home.css'
-import {BrowserRouter as Router,Link,NavLink} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 
 
 function Home() {

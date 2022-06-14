@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { login } from '../../features/userSlice';
 
@@ -15,6 +15,7 @@ const ReduxForm = () => {
 //   useEffect(() => {
 //     setSubmitError('')
 //   },[])
+
 
   const handleInputChange = (e) => {
     // debugger;
@@ -49,8 +50,8 @@ const ReduxForm = () => {
         console.log("form submit success...")
         dispatch(
             login({
-                username: username,
-                password: password,
+                username:username.value,
+                password:password.value,
                 loggedIn: true
             })
         );
