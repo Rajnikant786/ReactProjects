@@ -1,0 +1,17 @@
+@import url(https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@300;400;500;600;700&display=swap);
+
+/* body{
+    font-size: 10px !important; 
+} */
+
+.App{
+    overflow: auto;
+    color: var(--black);
+    background: #eaeff4 !important;
+    /* padding: 1rem; */
+}
+
+.blur{
+    display: none;
+} 
+

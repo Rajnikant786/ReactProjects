@@ -4,6 +4,7 @@ import Home from './pages/Home/Home'
 import PageNotFound from './components/pageNotFound/PageNotFound';
 import { Route,Routes } from 'react-router-dom'
 import ReduxLogin from './pages/reduxLogin/ReduxLogin'
+import VitalityInsuranceQuotePage from './pages/vitalityCarInsuranceQuotePage/VitalityInsuranceQuote';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home/>}></Route>
           <Route path='/reduxLogin' element={<ReduxLogin/>}></Route>
+          <Route path='/vitalityCarInsurance' element={<VitalityInsuranceQuotePage/>}></Route>
           <Route path='*' element={<PageNotFound/>}></Route>
         </Routes>
       </div>

@@ -5,7 +5,7 @@
   --hrColor: #cfcdcd;
   --cardColor: rgba(255, 255, 255, 0.64);
   --buttonBg: linear-gradient(98.63deg, #f9a225 0%, #f95f35 100%);
-  --primary: #EF5757;
+  --primary: #f41c5e;
   --secondary: #4A4EB7;
   --warning: #E1AE4A;
   --white: #ffffff;
@@ -17,7 +17,7 @@
   overflow: hidden;
   color: var(--black);
   background: #f3f3f3;
-  padding: 1rem;
+  /* padding: 1rem; */
 }
 
 @media only screen and (max-width: 980px){
