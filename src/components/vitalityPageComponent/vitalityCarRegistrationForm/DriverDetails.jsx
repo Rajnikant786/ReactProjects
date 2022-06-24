@@ -1,7 +1,13 @@
 import React, {useState} from 'react'
+import { useDispatch , useSelector } from 'react-redux';
+import { submitDriverDetails,clearDriverData } from '../../../features/carRegistrationSlice'
 import './registrationForm.css'
 
+
+
 const DriverDetails = () => {
+
+    const dispatch = useDispatch();
 
     // const [title, setTitle] = useState('');
     // const [firstName, setFirstName] = useState('');
@@ -33,21 +39,22 @@ const DriverDetails = () => {
     const handleInputChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
-        console.log(name,':-',value)
+        // console.log(name,':-',value)
 
         switch(e.target.name){
             case 'title':
                 if(e.target.value){
                     // setTitle({value:e.target.value, error: ''})
-                    console.log(e.target.value)
+                    // console.log(e.target.value)
                 }
                 else{
                     // setTitle({value: '', error:'Choose a title from the list'})
                     // setDriverRegistration({ ...driverRegistration, error:'Choose a title from the list'})
+                    alert('Choose a title from the list')
                 }
                 break;
             default:
-                console.log('nothing')
+                // console.log('nothing')
         }
         setDriverRegistration({ ...driverRegistration, [name] : value}) //... - spread operator, get data in driverdata object
     }
@@ -56,10 +63,93 @@ const DriverDetails = () => {
         e.preventDefault();
         const driverData = { ...driverRegistration } 
         console.log("driverData :- ", driverData)
+
+        dispatch(
+            submitDriverDetails({
+                driverData
+            })
+        );
+
+        
+
+    }
+
+    
+    const driver = useSelector(state => state.driverDetails);
+    // console.log('Get driverData from Redux :- ',driver.driverDetails);
+
+    const handleClearDeriverData = (e) => {
+        e.preventDefault();
+        dispatch(clearDriverData())
+
+        const driver = useSelector(state => state.driverDetails);
+        console.log('Clear driverData from Redux :- ',driver.driverDetails);
     }
 
     return (
         <div>
+
+            {driver.driverDetails &&( 
+            <>
+            <div className ="getData_Container">
+                <div className="card">
+                    <div className="card-header">
+                        Submited Data
+                    </div>
+                    <div className="card-body">
+                        <h1>{driver.driverDetails.driverData?.title}
+                            <span>{driver.driverDetails.driverData?.firstName}</span>
+                            <span>{driver.driverDetails.driverData?.lastName}</span>
+                        </h1>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>Date of birth</th>
+                                    <td>{driver.driverDetails.driverData?.DOB}</td>
+                                </tr>
+                                <tr>
+                                    <th>Merital Status</th>
+                                    <td>{driver.driverDetails.driverData?.maritalstatus}</td>
+                                </tr>
+                                <tr>
+                                    <th>Home Owner</th>
+                                    <td>{driver.driverDetails.driverData?.homeowner}</td>
+                                </tr>
+                                <tr>
+                                    <th>Occupation</th>
+                                    <td>{driver.driverDetails.driverData?.occupation}</td>
+                                </tr>
+                                <tr>
+                                    <th>Employee status</th>
+                                    <td>{driver.driverDetails.driverData?.dropdowndemployeestatus}</td>
+                                </tr>
+                                <tr>
+                                    <th>Business Type</th>
+                                    <td>{driver.driverDetails.driverData?.business_type}</td>
+                                </tr>
+                                <tr>
+                                    <th>Experience in Year</th>
+                                    <td>{driver.driverDetails.driverData?.driverexperienceyear}</td>
+                                </tr>
+                                <tr>
+                                    <th>Experience in Months</th>
+                                    <td>{driver.driverDetails.driverData?.driverexperiencemonth}</td>
+                                </tr>
+                                <tr>
+                                    <th>Post code</th>
+                                    <td>{driver.driverDetails.driverData?.postCode}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>    
+                    <div className="card-footer">
+                        <button className="btn" onClick={handleClearDeriverData}>Clear Data</button>    
+                    </div>                
+                </div>
+            </div> 
+            </>
+            )}   
 
             {/* <div className="vds-progress-bar">
                 <div className="vds-progress-bar__inner">

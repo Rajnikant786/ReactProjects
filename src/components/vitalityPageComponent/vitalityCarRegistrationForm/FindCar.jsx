@@ -1,6 +1,37 @@
-import React from 'react'
+import React,{useState} from 'react'
 
 const FindCar = () => {
+
+    const [carRegistration, setCarRegistration] = useState({
+        vehicleregistrationtext: "",
+    });
+    const handleInputChange = (e) => {
+        const vehicleRegistration_number = e.target.value;
+        console.log("vehicleRegistration_number :-" ,vehicleRegistration_number)
+        const name = e.target.name;
+        const value = e.target.value;
+        console.log(name,':-',value)
+
+        switch(e.target.name){
+            case 'vehicleregistrationtext':
+                if(e.target.value){
+                    // setTitle({value:e.target.value, error: ''})
+                    console.log(e.target.value)
+                }
+                else{
+                    // setTitle({value: '', error:'Choose a title from the list'})
+                    // setDriverRegistration({ ...driverRegistration, error:'Choose a title from the list'})
+                    alert("Enter registration number...")
+                }
+                break;
+            default:
+                console.log('nothing')
+        }
+        setCarRegistration({ ...carRegistration, [name] : value}) //... - spread operator, get data in driverdata object
+
+        const carRegistrationData = { ...carRegistration } 
+        console.log("carRegistrationData :- ", carRegistrationData)
+    }
     return (
         <div>
             <div>
@@ -46,7 +77,7 @@ const FindCar = () => {
                                                 </span></span>
                                         </label>
                                         <div className>
-                                            <input autoComplete="off" className="vds-form__input vds-form__input--uppercase " id="vehicle_registration_input" type="vehicleregistrationtext" name="vehicleregistrationtext" maxLength={12} placeholder="e.g. 57AN L3Y" data-hj-suppress="true"  />
+                                            <input autoComplete="off" className="vds-form__input vds-form__input--uppercase " id="vehicle_registration_input" type="vehicleregistrationtext" name="vehicleregistrationtext" maxLength={12} placeholder="e.g. 57AN L3Y" data-hj-suppress="true" onChange={handleInputChange} />
                                             {/* defaultValue */}
                                         </div>
                                     </div>

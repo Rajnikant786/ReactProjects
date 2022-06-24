@@ -9,7 +9,7 @@ const CarRegistrationForm = () => {
     const currentTitle = ["Car Details","Confirm car details","Driver details"]
     // const[nextTitle, setNextTitle] = useState("");
     const nextTitle = ["Confirm car details","Driver details","About you"]
-    const[disableNextBtn, setDisableNextBtn] = useState(false)
+    // const[disableNextBtn, setDisableNextBtn] = useState(false)
     const findCar = (e) =>{
         console.log(e.target.attributes.id.value)
         setFormSteps(1)
@@ -20,12 +20,10 @@ const CarRegistrationForm = () => {
 
     const nextBtn = (e) => {
         setFormSteps((currentPage) => currentPage+1)
-        console.log(formSteps)
-        // const curentSteps = setFormSteps((currentPage)
-        if(formSteps == currentTitle.length - 1){
-            setDisableNextBtn(true)
-        }
-        // if()
+        // console.log(formSteps)
+        // if(formSteps == currentTitle.length - 1){
+        //     setDisableNextBtn(true)
+        // }
     }
 
     const backBtn = () => {
