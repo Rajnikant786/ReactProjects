@@ -81,10 +81,12 @@ const DriverDetails = () => {
     const handleClearDeriverData = (e) => {
         e.preventDefault();
         dispatch(clearDriverData())
-
-        const driver = useSelector(state => state.driverDetails);
         console.log('Clear driverData from Redux :- ',driver.driverDetails);
+        
     }
+
+    // const driver = useSelector(state => state.driverDetails);
+    // console.log('Clear driverData from Redux :- ',driver.driverDetails);
 
     return (
         <div>
